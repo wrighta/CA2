@@ -2,7 +2,8 @@ package com.company;
 
 // Super Class - sub-classes will inherit id, name, email and mobile number.
 // SoftwareStaff class - superclass that has common information for all Staff
-public  class SoftwareStaff  {
+// SoftwareStaff cannot be instantiated.
+public abstract class SoftwareStaff  {
 
     private int id;
     private String name;
