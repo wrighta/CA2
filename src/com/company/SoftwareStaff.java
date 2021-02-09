@@ -5,7 +5,6 @@ package com.company;
 // SoftwareStaff cannot be instantiated.
 
 public abstract class SoftwareStaff  {
-//public class SoftwareStaff  {
 
     private int id;
     private String name;

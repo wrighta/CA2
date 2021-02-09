@@ -6,7 +6,7 @@ public class Main {
 	// write your code here
 
         // Hmmmm - should we able to instantiate the SoftwareStaff?? It's not Programme, its not an hourlyWorker, it's just a generic Staff object.
-        SoftwareStaff s1 = new SoftwareStaff(99, "Joe Soap", "joe@soap.ie", "555 9999");
+        // SoftwareStaff s1 = new SoftwareStaff(99, "Joe Soap", "joe@soap.ie", "555 9999");
 
 
 
@@ -18,6 +18,8 @@ public class Main {
         System.out.println("Name is " + p1.getName());
         // Call the Programmer get methods
         System.out.println("Skills are " + p1.getSkills());
+
+        System.out.println("Pay per month is " + p1.calcPay());
 
         // how would I print Salary and email...
 
@@ -34,6 +36,7 @@ public class Main {
         // Call the Programmer get methods
         System.out.println("Hourly are " + h1.getHourlyRate());
 
+        System.out.println("Pay per week is " + h1.calcPay());
 
         // An easier way - get the string from toString() - print thestring that is returned from Programmer toString()
         System.out.println("\n***** Printing with toString() *********");
