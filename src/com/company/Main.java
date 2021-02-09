@@ -5,6 +5,11 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
+        // Hmmmm - should we able to instantiate the SoftwareStaff?? It's not Programme, its not an hourlyWorker, it's just a generic Staff object.
+        SoftwareStaff s1 = new SoftwareStaff(99, "Joe Soap", "joe@soap.ie", "555 9999");
+
+
+
         Programmer p1 = new Programmer(1, "Joe", "joe@iadt.ie", "087 7777777", "C++ Java", 700000);
         // call the get methods and print.
         System.out.println("\n\n***** Printing each instance variable by calling it's get method *********");

@@ -27,7 +27,11 @@ public class Programmer extends SoftwareStaff{
 
     }
 
-
+    @Override
+    public double calcPay() {
+        // lets say they get paid monthly. So divide salary by 12
+        return salary/12;
+    }
 
     public String getSkills() {
         return skills;

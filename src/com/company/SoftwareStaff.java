@@ -3,7 +3,9 @@ package com.company;
 // Super Class - sub-classes will inherit id, name, email and mobile number.
 // SoftwareStaff class - superclass that has common information for all Staff
 // SoftwareStaff cannot be instantiated.
+
 public abstract class SoftwareStaff  {
+//public class SoftwareStaff  {
 
     private int id;
     private String name;
@@ -18,6 +20,8 @@ public abstract class SoftwareStaff  {
         this.mobile = m;
 
     }
+    // Define an abstract method here, forces any sub-class to implement it.
+    public abstract double calcPay();
 
     public int getId() {
         return id;
@@ -53,7 +57,7 @@ public abstract class SoftwareStaff  {
 
 
     @Override
-    // now you know the toString() method overrides the toString() method in the Super-Super class Object
+ //    now you know the toString() method overrides the toString() method in the Super-Super class Object
     // This method always returns a String, it's up to you to return a string that represents the object
     public String toString()
     {
