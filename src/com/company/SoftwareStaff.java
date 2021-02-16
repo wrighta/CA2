@@ -4,7 +4,7 @@ package com.company;
 // SoftwareStaff class - superclass that has common information for all Staff
 // SoftwareStaff cannot be instantiated.
 
-public abstract class SoftwareStaff  {
+public abstract class SoftwareStaff implements Reports {
 
     private int id;
     private String name;

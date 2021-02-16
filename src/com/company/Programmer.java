@@ -27,6 +27,35 @@ public class Programmer extends SoftwareStaff{
 
     }
 
+    public Programmer(int id, String n, String e, String m) {
+        super(id, n, e, m);
+    }
+
+
+
+     @Override
+    public void printDetailedReport() {
+        System.out.println("******DETAILED STAFF REPORT **********");
+        System.out.println("Staff ID : " + super.getId());
+        System.out.println("Staff Name : " + super.getName());
+        System.out.println("Staff Email : " + super.getEmail());
+        System.out.println("Staff Mobile : " + super.getMobile());
+        System.out.println("Skills : " + skills);
+        System.out.println("Salary : " + salary);
+        System.out.println("Monthly Pay : " + calcPay());
+        System.out.println("**************************************");
+    }
+
+    @Override
+    public void printSummary() {
+        System.out.println("********* SUMMARY ***************");
+        System.out.println("Staff ID : " + super.getId());
+        System.out.println("Staff Email : " + super.getEmail());
+        System.out.println("Monthly Pay : " + calcPay());
+        System.out.println("********************************");
+    }
+
+
     @Override
     public double calcPay() {
         // lets say they get paid monthly. So divide salary by 12

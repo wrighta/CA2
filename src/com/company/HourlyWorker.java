@@ -12,6 +12,16 @@ public class HourlyWorker extends SoftwareStaff{
     }
 
     @Override
+    public void printDetailedReport() {
+
+    }
+
+    @Override
+    public void printSummary() {
+
+    }
+
+    @Override
     public double calcPay() {
         // lets say these guys get paid weekly and they alway do 40 hours a week.
         return hourlyRate * 40;
@@ -25,6 +35,7 @@ public class HourlyWorker extends SoftwareStaff{
     public void setHourlyRate(double hourlyRate) {
         this.hourlyRate = hourlyRate;
     }
+
 
 }
 
