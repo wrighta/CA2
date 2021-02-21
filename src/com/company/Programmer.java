@@ -84,7 +84,7 @@ public class Programmer extends SoftwareStaff{
         // super.toString() calls the super class SoftwareStaff's toString method()
         // this returns a String for the SoftwareStaff instance variables which is concatenated to these other strings below.
         // then the whole string is returned to the calling program (in our case the test program in main().
-        return super.toString() + "\nSkills " + skills ; //+ "\nSalary " +  salary;
+        return "\n\nProgrammer " + super.toString() + "\nSkills : " + skills + "\nSalary : " + salary ; //+ "\nSalary " +  salary;
     }
 
 

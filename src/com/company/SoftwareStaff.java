@@ -11,6 +11,7 @@ public abstract class SoftwareStaff implements Reports {
     private String email;
     private String mobile;
 
+    private int managerId;
 
     public SoftwareStaff(int id, String n, String e, String m) {
         this.id = id;
@@ -54,13 +55,16 @@ public abstract class SoftwareStaff implements Reports {
         this.mobile = mobile;
     }
 
+    public int getManagerId() {   return managerId; }
+
+    public void setManagerId(int managerId) { this.managerId = managerId;   }
 
     @Override
  //    now you know the toString() method overrides the toString() method in the Super-Super class Object
     // This method always returns a String, it's up to you to return a string that represents the object
     public String toString()
     {
-        return "Name : " + getName();
+        return "\nName : " + getName() + "\nID : " + id;
     }
 
 

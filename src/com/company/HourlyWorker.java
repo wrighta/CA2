@@ -37,5 +37,10 @@ public class HourlyWorker extends SoftwareStaff{
     }
 
 
+    @Override
+    public String toString() {
+        return
+                "\n\nHourlyWorker " + super.toString() + "\nHourly Rate : " + hourlyRate;
+    }
 }
 
