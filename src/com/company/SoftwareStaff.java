@@ -20,6 +20,16 @@ public abstract class SoftwareStaff implements Reports {
         this.mobile = m;
 
     }
+
+    public SoftwareStaff(int id, String n, String e, String m, int managerId) {
+        this.id = id;
+        this.name = n;
+        this.email = e;
+        this.mobile = m;
+        this.managerId = managerId;
+
+    }
+
     // Define an abstract method here, forces any sub-class to implement it.
     public abstract double calcPay();
 

@@ -11,6 +11,11 @@ public class HourlyWorker extends SoftwareStaff{
         this.hourlyRate = hourlyRate;
     }
 
+    public HourlyWorker(int id, String n, String e, String m, double hourlyRate, int managerId){
+        super(id, n, e, m, managerId);
+        this.hourlyRate = hourlyRate;
+    }
+
     @Override
     public void printDetailedReport() {
 

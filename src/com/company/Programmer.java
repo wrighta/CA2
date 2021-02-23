@@ -8,6 +8,7 @@ public class Programmer extends SoftwareStaff{
     private double salary;
 
 
+
     public Programmer(String n, String e, String m, String sk, double sl) {
         // Calling the Superclass constructor - SoftwareStaff
         // This constructor expects and ID, name, email, mobile and staffnumber passed in
@@ -26,6 +27,17 @@ public class Programmer extends SoftwareStaff{
         // super(id,n,e,m); don't have you call to the super class after the other assignments
 
     }
+
+    public Programmer(int id, String n, String e, String m, String sk, double sl, int managerId) {
+        super(id,n,e,m, managerId);
+        this.skills = sk;
+        this.salary = sl;
+
+        // call to superclass constructor must be the first line in sub-class constructor.
+        // super(id,n,e,m); don't have you call to the super class after the other assignments
+
+    }
+
 
     public Programmer(int id, String n, String e, String m) {
         super(id, n, e, m);

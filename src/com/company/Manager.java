@@ -30,7 +30,7 @@ public class Manager {
     }
 
     // remove a SoftwareStaff member from the mangers list of staff
-    public void removeStaff(SoftwareStaff s){
+    public void removeStaffFromManager(SoftwareStaff s){
         softwareStaffList.remove(s);
     }
 
