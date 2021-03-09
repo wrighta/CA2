@@ -1,6 +1,8 @@
 package com.company.utils;
 
 import java.util.Scanner;
+
+import com.company.Manager;
 import com.company.Programmer;
 
 /**
@@ -13,7 +15,7 @@ public class Input {
     // Called to read in a new programmer when Create Programmer is chosen by user
     public static Programmer readProgrammer() {
         String name, email, mobile, skills;
-        int staffNumber, mId;
+        int mId;
         double salary;
         Scanner keyboard = new Scanner(System.in);
 
@@ -29,9 +31,6 @@ public class Input {
         System.out.print("Enter mobile : ");
         mobile = keyboard.nextLine();
 
-        System.out.print("Enter staff number : ");
-        staffNumber = keyboard.nextInt();
-        keyboard.nextLine();
 
         System.out.print("Enter skills : ");
         skills = keyboard.nextLine();
@@ -46,17 +45,32 @@ public class Input {
         mId = keyboard.nextInt();
         keyboard.nextLine();
 
-        // Create the Programmer object p
-//        Programmer p =
-//                new Programmer(name, email, mobile,
-//                        skills, salary, mId);
 
         // Create the Programmer object p
         Programmer p =
                 new Programmer(name, email, mobile,
                         skills, salary);
 
+
         return p;
+    }
+
+    public static Manager readManager() {
+        String name;
+        int office;
+
+        Scanner keyboard = new Scanner(System.in);
+
+        // ask the user for all the programmer data except the ID - ID is automatically
+        // created in the database when you are creating something for the first time
+        System.out.println("Enter manager name : ");
+        name = keyboard.nextLine();
+
+        System.out.println("Enter Office Number : ");
+        office = keyboard.nextInt();
+        keyboard.nextLine();
+
+        return (new Manager(name, office));
     }
 }
 

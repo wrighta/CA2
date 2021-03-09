@@ -57,6 +57,9 @@ public class Model {
         return m;
     }
 
+    public boolean createManager(Manager m){
+        return (mGateway.insertManager(m));
+    }
 }
 
 

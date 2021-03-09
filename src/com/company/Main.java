@@ -29,8 +29,9 @@ public class Main {
 
             System.out.println("1. View all SoftwareStaff");
             System.out.println("2. View Manager by Id");
-            System.out.println("3. Create New Manager ...");
-            System.out.println("4. Assign SoftwareStaff to existing Manager...");
+            System.out.println("3. View all Managers");
+            System.out.println("4. Create New Manager ...");
+            System.out.println("5. Assign SoftwareStaff to existing Manager...");
 
 
             System.out.println("9. Exit");
@@ -52,13 +53,20 @@ public class Main {
                 }
                 case 2: {
                     viewManagerbyId();
+                    break;
                 }
                 case 3: {
-                    System.out.println("Not implemented yet, First implement a simple Create New Manager, consider assigning new or existing SoftwareStaff to that Manager..you may need to get the manager ID from the gateway.. ");
+//                    viewAllManagers();
+//                    break;
+                }
+                case 4: {
+                    createNewManager();
+                    break;
                 }
 
-                case 4: {
+                case 5: {
                     System.out.println("Not implemented yet, lots of ways to do this...consider if the User can Create new SoftwareStaff and Assign them to to the manager or Assign existing Software Staff");
+                    break;
                 }
 
             }
@@ -66,6 +74,15 @@ public class Main {
         while (opt != 9);
         System.out.println("Goodbye");
     } // END OF MAIN()
+
+    private static void createNewManager() {
+        Manager m = Input.readManager();
+        if (model.createManager(m))
+            System.out.println("Success : manager Added to DB");
+        else
+            System.out.println("Oh Ohh Something went wrong");
+
+    }
 
     private static void viewManagerbyId() {
         System.out.println("Enter the id for the manager...");

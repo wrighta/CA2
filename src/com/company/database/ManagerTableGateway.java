@@ -2,10 +2,8 @@ package com.company.database;
 
 import com.company.Manager;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.util.logging.Logger;
 
 public class ManagerTableGateway {
 
@@ -68,5 +66,58 @@ public class ManagerTableGateway {
         // return the manager (it will be null if the manager did not exist
         return m;
     }
+
+    // Called from the Model when the user wants to create a new programmer in the database, the new ID is created in the database and returned here
+    public boolean insertManager(Manager m)  {
+
+        String query;                   // the SQL query to execute
+        PreparedStatement stmt;         // the java.sql.PreparedStatement object used to execute the SQL query
+        int numRowsAffected;
+
+        // I am going to create a new Programmer object, this object will have the Id after the row is inserted into the database
+        //   Programmer dbProgrammer = null;
+
+        // the required SQL INSERT statement with place holders for the values to be inserted into the database
+        query = "INSERT INTO " + TABLE_NAME + " (" +
+                COLUMN_NAME + ", " +
+                COLUMN_OFFICE +
+
+                ") VALUES (?, ?)";
+
+        try {
+            // create a PreparedStatement object to execute the query and insert the values into the query
+            stmt = mConnection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, m.getName());
+            stmt.setInt(2, m.getOfficeNumber());
+
+
+            //  execute the query and make sure that one and only one row was inserted into the database
+            numRowsAffected = stmt.executeUpdate();
+
+            // if numRowsAffected is 1 - that means the SQL insert inserted one row into the table, so the ID should have been auto-incremented and sent back here.
+            // so assign this new ID to the ID.
+            if (numRowsAffected == 1) {
+//                    // if one row was inserted, retrieve the id that was assigned to that row in the database and ret
+//                    ResultSet keys = stmt.getGeneratedKeys();
+//                    keys.next();
+
+//                    try getting the ID that is returned here and send it back to the user
+//                    id = keys.getInt(1);
+
+                return true;
+            }
+
+        }
+        catch (SQLException e)
+        {
+            System.out.println("Enter a proper error message here");
+        }
+
+        // return the Programmer object created with the new ID, The calling program in the Model should check to ensure it is not null
+        return false;
+    }
+
+
+
 
 }

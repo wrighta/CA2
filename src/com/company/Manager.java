@@ -12,6 +12,13 @@ public class Manager {
 
     private List<SoftwareStaff> softwareStaffList;
 
+    //make sure you have a constructor that does not have an ID, for when you are creating the object for the first time
+    // the database will assign the id
+    public Manager(String name, int officeNumber){
+        this.name = name;
+        this.officeNumber = officeNumber;
+    }
+
 
     public Manager(int id, String name, int officeNumber){
         this.managerId = id;
