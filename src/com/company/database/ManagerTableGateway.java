@@ -113,7 +113,7 @@ public class ManagerTableGateway {
             System.out.println("Enter a proper error message here");
         }
 
-        // return the Programmer object created with the new ID, The calling program in the Model should check to ensure it is not null
+        // return the manager object created with the new ID, The calling program in the Model should check to ensure it is not null
         return false;
     }
 

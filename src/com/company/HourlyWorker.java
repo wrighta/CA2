@@ -16,6 +16,10 @@ public class HourlyWorker extends SoftwareStaff{
         this.hourlyRate = hourlyRate;
     }
 
+    public HourlyWorker() {
+        super();
+    }
+
     @Override
     public void printDetailedReport() {
 

@@ -1,5 +1,7 @@
 package com.company;
 
+
+
 import com.company.utils.Input;
 import com.mysql.cj.log.Log;
 
@@ -27,11 +29,15 @@ public class Main {
         do {
             System.out.println("\n***********MENU************");
 
-            System.out.println("1. View all SoftwareStaff");
-            System.out.println("2. View Manager by Id");
-            System.out.println("3. View all Managers");
-            System.out.println("4. Create New Manager ...");
-            System.out.println("5. Assign SoftwareStaff to existing Manager...");
+            System.out.println("1. Create a SoftwareStaff");
+            System.out.println("2. Read all SoftwareStaff");
+            System.out.println("3. Update a SoftwareStaff");
+            System.out.println("4. Delete a SoftwareStaff");
+
+            System.out.println("5. View Manager by Id");
+            System.out.println("6. View all Managers");
+            System.out.println("7. Create New Manager ...");
+            System.out.println("8. Assign SoftwareStaff to existing Manager...");
 
 
             System.out.println("9. Exit");
@@ -47,24 +53,39 @@ public class Main {
              ****** DECIDE WHAT OPTION USER CHOSE***********
              ***********************************************/
             switch (opt) {
+
                 case 1: {
+                    createSoftwareStaff();
+                    break;
+                }
+
+                case 2: {
                     viewSoftwareStaff();
                     break;
                 }
-                case 2: {
-                    viewManagerbyId();
+
+                case 3: {
                     break;
                 }
-                case 3: {
-//                    viewAllManagers();
-//                    break;
-                }
+
                 case 4: {
-                    createNewManager();
                     break;
                 }
 
                 case 5: {
+                    viewManagerbyId();
+                    break;
+                }
+                case 6: {
+//                    viewAllManagers();
+//                    break;
+                }
+                case 7: {
+                    createNewManager();
+                    break;
+                }
+
+                case 8: {
                     System.out.println("Not implemented yet, lots of ways to do this...consider if the User can Create new SoftwareStaff and Assign them to to the manager or Assign existing Software Staff");
                     break;
                 }
@@ -75,8 +96,42 @@ public class Main {
         System.out.println("Goodbye");
     } // END OF MAIN()
 
+    // Creates either a Programmer or HourlyWorker
+    private static void createSoftwareStaff() {
+        SoftwareStaff softwareStaff = null;
+        
+        System.out.println("\nWhat do you want to create??");
+        System.out.println("1. Programmer");
+        System.out.println("2. Hourly Worker");
+
+        int choice = Integer.parseInt(keyboard.nextLine());
+       
+        switch (choice){
+            case 1:
+            {
+                softwareStaff = Input.readProgrammer();
+                int generatedId = model.createSoftwareStaff(softwareStaff);
+                System.out.println("Software staff created with Id "+ generatedId);
+                break;
+            }
+            case 2: 
+            {
+                // do something similar for second subclass
+                break;
+            }
+            
+
+        }
+        model.createSoftwareStaff(softwareStaff);
+                
+
+       
+
+    }
+
     private static void createNewManager() {
         Manager m = Input.readManager();
+
         if (model.createManager(m))
             System.out.println("Success : manager Added to DB");
         else

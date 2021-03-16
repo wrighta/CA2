@@ -58,7 +58,15 @@ public class Model {
     }
 
     public boolean createManager(Manager m){
-        return (mGateway.insertManager(m));
+//        boolean inserted = mGateway.insertManager(m);
+//        return  inserted;
+//
+       return (mGateway.insertManager(m));
+    }
+
+    public int createSoftwareStaff(SoftwareStaff softwareStaff) {
+        int createdId = this.sGateway.createSoftwareStaff(softwareStaff);
+        return createdId;
     }
 }
 

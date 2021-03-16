@@ -9,11 +9,11 @@ public class Programmer extends SoftwareStaff{
 
 
 
-    public Programmer(String n, String e, String m, String sk, double sl) {
+    public Programmer(String n, String e, String m, String sk, double sl,int mId) {
         // Calling the Superclass constructor - SoftwareStaff
         // This constructor expects and ID, name, email, mobile and staffnumber passed in
         // Since we don't have an id yet we pass in -1 (ie. this programmer is not yet created in the database.)
-        super(-1, n,e,m);
+        super(-1, n,e,m, mId);
         this.skills = sk;
         this.salary = sl;
     }
@@ -43,9 +43,12 @@ public class Programmer extends SoftwareStaff{
         super(id, n, e, m);
     }
 
+    public Programmer() {
+        super();
+    }
 
 
-     @Override
+    @Override
     public void printDetailedReport() {
         System.out.println("******DETAILED STAFF REPORT **********");
         System.out.println("Staff ID : " + super.getId());

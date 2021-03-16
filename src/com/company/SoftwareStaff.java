@@ -30,6 +30,10 @@ public abstract class SoftwareStaff implements Reports {
 
     }
 
+    public SoftwareStaff() {
+
+    }
+
     // Define an abstract method here, forces any sub-class to implement it.
     public abstract double calcPay();
 

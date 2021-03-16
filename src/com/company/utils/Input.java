@@ -48,8 +48,7 @@ public class Input {
 
         // Create the Programmer object p
         Programmer p =
-                new Programmer(name, email, mobile,
-                        skills, salary);
+                new Programmer(name, email, mobile, skills, salary, mId);
 
 
         return p;
